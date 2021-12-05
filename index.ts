@@ -1,17 +1,16 @@
-let str = "Lorem ipsum dolor dolor sit apmet";
 
-let listOfArr = ["Lorem","dolor","apmet"];
 
-for(let x = 0 ; x < listOfArr.length ; x++){
-    let regExStr:string = `${listOfArr[x]}`
-    let regEx = new RegExp(regExStr,'g') 
-    
-    str = str.replace(regEx, maskingOfString(listOfArr[x]))
+function filterText(text:string,listOfBadWord:Array<string>):String{
+    for(let x = 0 ; x < listOfBadWord.length ; x++){
+        let regExStr:string = `${listOfBadWord[x]}`
+        let regEx = new RegExp(regExStr,'g') 
+        
+        text = text.replace(regEx, maskingString(listOfBadWord[x]))
+    }
+    return text
 }
-console.log(str)
 
-
-function maskingOfString(text:string):string{
+function maskingString(text:string):string{
 
     let c:Array<string> =  text.split('')
 
