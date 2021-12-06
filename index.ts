@@ -2,9 +2,9 @@
 
 function filterText(text:string,listOfBadWord:Array<string>):String{
     for(let x = 0 ; x < listOfBadWord.length ; x++){
+        
         let regExStr:string = `${listOfBadWord[x]}`
         let regEx = new RegExp(regExStr,'g') 
-        
         text = text.replace(regEx, maskingString(listOfBadWord[x]))
     }
     return text

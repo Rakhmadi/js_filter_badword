@@ -5,19 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        *{
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bolder;
+            font-size: large;
+        }
+    </style>
 </head>
 <body>
     <p id="text">
         ipsum lorem dolor sit amet
     </p>
+    <span>filter List</span>
+    <div id="el"></div>
 <script src="./dist/index.js" ></script>
 <script>
-    let el = document.getElementById("text").innerHTML
-    let x = filterText(el,[
-        "dolor",
-        "amet"
-    ]);
-    document.getElementById("text").innerHTML = x
+    window.onload = ()=>{
+            
+        let el = document.getElementById("text").innerHTML
+
+        let listFilter = [
+            "dolor",
+            "amet"
+        ];
+
+        let x = filterText(el,listFilter);
+
+        document.getElementById("text").innerHTML = x
+
+        let elementList = document.getElementById("el")
+
+        listFilter.forEach((val)=>{
+           elementList.innerHTML += `<li>${val}</li>`
+        })
+        
+    }
+    
 </script>
 </body>
 </html>
