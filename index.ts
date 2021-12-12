@@ -1,5 +1,4 @@
 
-
 function filterText(text:string,listOfBadWord:Array<string>):String{
     for(let x = 0 ; x < listOfBadWord.length ; x++){
         
@@ -22,3 +21,4 @@ function maskingString(text:string):string{
     return c.join("")
 
 }
+export {filterText,maskingString}
